@@ -1,0 +1,36 @@
+.footer-area {
+    display: flex;
+    background-color: #146112;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    .footer-desc {
+        color: white;
+        font-weight: 400;
+    }
+
+    .social-area {
+
+        display: flex;
+        align-items: center;
+        .footer-desc{
+            color: white;
+            font-weight: 400;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .social-icon{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+}

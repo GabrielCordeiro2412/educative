@@ -1,0 +1,134 @@
+.nav-bar-area {
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+
+    .logo-educative {
+        width: 300px;
+    }
+
+    .nav-bar-list {
+        display: flex;
+        list-style: none;
+        width: 10%;
+
+        .nav-bar-list-items {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+
+    .navbar-toggle {
+        display: none;
+        background: none;
+        outline: none;
+        border: none;
+        /* Estilize o botão de colapso conforme desejado */
+    }
+
+    .navbar-items {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+
+        li {
+            padding-right: 10px;
+            font-weight: 600;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        &.show {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: flex;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+                background-color: rgba(255, 255, 255, 1);
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+
+    li:last-child a {
+        border: none;
+        color: white;
+        background-image: linear-gradient(30deg, hsl(135, 52%, 29%), #146112);
+        border-radius: 20px;
+        background-size: 100% auto;
+        font-family: inherit;
+        padding: 0.6em 1.5em;
+
+        &:hover {
+            background-position: right center;
+            background-size: 200% auto;
+            -webkit-animation: pulse 2s infinite;
+            animation: pulse512 1.5s infinite;
+        }
+
+        @keyframes pulse512 {
+            0% {
+                box-shadow: 0 0 0 0 #146112;
+            }
+
+            70% {
+                box-shadow: 0 0 0 5px rgb(218 103 68 / 0%);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+            }
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        .navbar-toggle {
+            display: block;
+            z-index: 4;
+            /* Defina estilos para o botão de colapso em telas menores */
+        }
+
+        .logo-educative {
+            width: 250px;
+        }
+
+        .navbar-items {
+            display: none;
+            /* Oculte a lista de itens por padrão em telas menores */
+        }
+
+        .navbar-items li {
+            padding: 0;
+            font-size: 30px;
+            margin-top: 20px;
+        }
+
+        &.show {
+            .navbar-items {
+                display: flex;
+            }
+        }
+
+        .menu-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+
+    }
+}
